@@ -178,7 +178,9 @@ export class UserBoxComponent extends Component<IUserBoxComponentProps, IUserBox
       return
     }
     if (!isFollowed) {
-      followUser!(followingCircle!.get('id'), { avatar, userId, fullName })
+      // console.log('ID: ' + this.props)
+      // alert('clicked: ' + this.props.followingCircle)
+      followUser!(userId, { avatar, userId, fullName })
     } else {
       this.onRequestOpenAddCircle()
     }
