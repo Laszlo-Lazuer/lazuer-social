@@ -437,7 +437,7 @@ export class PostComponent extends Component<IPostComponentProps, IPostComponent
               aria-label='Love'>
               <Checkbox
                 className={classes.iconButton}
-                checkedIcon={<SvgFavorite style={{ fill: '#4CAF50' }} />}
+                checkedIcon={<SvgFavorite style={{ fill: '#E50000' }} />}
                 icon={<SvgFavoriteBorder style={{ fill: '#757575' }} />}
                 checked={this.props.currentUserVote}
               />
