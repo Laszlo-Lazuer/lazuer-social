@@ -336,6 +336,32 @@ export class PostComponent extends Component<IPostComponentProps, IPostComponent
 
     })
   }
+  componentWillMount() {
+    const { post } = this.props
+
+    const { 
+      ownerUserId,  
+      id,  
+      commentCounter
+    } = post.toJS()
+
+    const { getPostComments} = this.props
+    getPostComments!(ownerUserId!, id!)
+  }
+
+  componentDidMount() {
+    const { post } = this.props
+
+    const { 
+      ownerUserId,  
+      id,  
+      commentCounter
+    } = post.toJS()
+
+    const { getPostComments} = this.props
+    getPostComments!(ownerUserId!, id!)
+    // this.render()
+  }
 
   /**
    * Reneder component DOM
@@ -394,7 +420,13 @@ export class PostComponent extends Component<IPostComponentProps, IPostComponent
       commentCounter, 
       disableSharing ,
     } = post.toJS()
+    console.log(post)
+    console.log(commentCounter)
     // Define variables
+
+    // const { getPostComments} = this.props
+    // getPostComments!(ownerUserId!, id!)
+
     return (
       <Card key={`post-component-${id}`}>
         <CardHeader
@@ -450,7 +482,7 @@ export class PostComponent extends Component<IPostComponentProps, IPostComponent
               onClick={this.handleOpenComments}
               aria-label='Comment'>
               <SvgComment />
-              <div className={classes.commentCounter}>{commentCounter! > 0 ? commentCounter : ''} </div>
+              <div className={classes.commentCounter}>{commentCounter! > 0 ? commentCounter : 0} </div>
             </IconButton>
             </div>) : ''}
           {!disableSharing ? (<IconButton
