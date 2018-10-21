@@ -210,13 +210,17 @@ export class LoginComponent extends Component<ILoginComponentProps, ILoginCompon
                   <br />
                   <br />
                   <div className='login__button-box'>
-                    <div>
+                    {/* <div>
                       <Button onClick={this.props.signupPage} tabIndex={4}>{translate!('login.createAccountButton')}</Button>
-                    </div>
+                      <p>Reach out to create an account</p>
+                    </div> */}
                     <div >
                       <Button variant='raised' color='primary' onClick={this.handleForm} tabIndex={3} >{translate!('login.loginButton')}</Button>
                     </div>
-                  </div>
+                    </div>
+                    <div>
+                      <p>*Reach out to create an account</p>
+                    </div>
                   <span className={classes.bottomPaper}>{translate!('login.forgetPasswordMessage')} <NavLink to='/resetPassword' className={classes.link}>{translate!('login.resetPasswordLabel')}</NavLink></span>
                 </div>
               </form>
